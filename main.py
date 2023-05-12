@@ -27,8 +27,13 @@ async def mem(ctx):
     with open(f'images/{img}', 'rb') as f:
         picture = discord.File(f)
         await ctx.send(file = picture)
+
 @bot.command()
 async def hint(ctx):
     await ctx.send(random.choice(hints))
+
+@bot.command()
+async def Help(ctx):
+    await ctx.send("!Help - показывает команды (как ты и догадался), !hint - даёт совет об экологии, !mem - скидывает мем про экологию, !hello - приветствуется с вами.")
 
 bot.run("")
